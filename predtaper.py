@@ -37,7 +37,7 @@ def predtaper(doses,weeks):
         pillsC.append(len([x for x in pills if x==pu]))
     
     for I,dos,dayct,wr in zip(intervals,doses,daycounts,weekranges):
-        print(I['start'].strftime("%m/%d/%y")+'-'+I['stop'].strftime("%m/%d/%y")+': ',sig[dos])
+        print(weekrangestring(wr)+'('+I['start'].strftime("%m/%d/%y")+'-'+I['stop'].strftime("%m/%d/%y")+'): ',sig[dos])
     for dos,wr in zip(doses,weekranges):
         print(weekrangestring(wr),sig[dos])
     for pu,pc in zip(pillsU,pillsC):
